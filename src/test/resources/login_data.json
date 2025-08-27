@@ -1,0 +1,5 @@
+{
+  "username": "TestingAutomation",
+  "password": "Interview@123!",
+  "expectedPath": "PartnerOrders/PartnerDashBoard"
+}
