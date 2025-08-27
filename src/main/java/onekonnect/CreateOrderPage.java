@@ -82,7 +82,7 @@ public class CreateOrderPage {
                                  String custName, String custCode, String cName, String cEmail,
                                  String custAddress, String custCity, String custState, String pCode,
                                  String compName, String compCity, String compState, String fedTaxId,
-                                 String compAddress, String connNum, String empNum,
+                                 String compAddress, String connNum, String empNum, String monthYear, String day,
                                  String carrier, String carrierContact, String carrierEmail, String cobra) {
         setPartnerContactName(pContactName);
         setPartnerContactPhone(pContactPhone);
@@ -102,7 +102,7 @@ public class CreateOrderPage {
         setCompanyAddress(compAddress);
         setConnectionsNumber(connNum);
         setEmployeesNumber(empNum);
-        selectPlanStartDate("August 2025", "27");
+        selectPlanStartDate(monthYear, day);
         setCarrierName(carrier);
         setContactName0(carrierContact);
         setContactEmail0(carrierEmail);

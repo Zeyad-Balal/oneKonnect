@@ -55,6 +55,8 @@ public class CreateOrderTest extends Base_Tests {
     public void createOrderSuccessfully(Map<String, String> data) { // ** KEY CHANGE #2 **
         // --- Test Steps ---
         LoginPage loginPage = new LoginPage(driver);
+
+        Assert.assertTrue(loginPage.getLoginForm().isDisplayed());
         DashboardPage dashboardPage = loginPage.login(username, password);
 
         //Assert on Dashboard
@@ -62,7 +64,7 @@ public class CreateOrderTest extends Base_Tests {
         String expectedUrl = prop.getProperty("baseUrl")+"PartnerOrders/PartnerDashBoard";
         Assert.assertEquals(actualUrl, expectedUrl, "The URL did not match what was expected.");
 
-        System.out.println(expectedUrl);
+        System.out.println("dashboard page : " + expectedUrl);
 
         CreateOrderPage createOrderPage = dashboardPage.navigateToAddOrderPage();
 
@@ -73,7 +75,7 @@ public class CreateOrderTest extends Base_Tests {
                 data.get("customerName"), data.get("customerCode"), data.get("contactName"), data.get("contactEmail"),
                 data.get("customerAddress"), data.get("customerCity"), data.get("customerState"), data.get("primaryCode"),
                 data.get("companyName"), data.get("companyCity"), data.get("companyState"), data.get("federalTaxId"),
-                data.get("companyAddress"), data.get("connectionsNumber"), data.get("employeesNumber"),
+                data.get("companyAddress"), data.get("connectionsNumber"), data.get("employeesNumber"), data.get("monthYear") , data.get("day"),
                 data.get("carrierName"), data.get("carrierContact"), data.get("carrierEmail"), data.get("cobraMembers")
         );
 
@@ -85,6 +87,7 @@ public class CreateOrderTest extends Base_Tests {
         Assert.assertTrue(ordersListPage.isCustomerPresent(customerName),
                 "Test Case '" + data.get("testCaseName") + "' Failed: The customer '" + customerName + "' was not found.");
 
+        System.out.println("customer name : " + customerName);
         System.out.println("Test Case '" + data.get("testCaseName") + "' Passed.");
     }
 }

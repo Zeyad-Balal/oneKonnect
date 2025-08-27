@@ -24,6 +24,9 @@ public class LoginPage {
     @FindBy(xpath = "//*[@class='submitbtn']")
     private WebElement loginBtn;
 
+    @FindBy (id = "loginForm")
+    private WebElement loginForm;
+
     // --- Constructor ---
     public LoginPage(WebDriver driver) {
         this.driver = driver;
@@ -42,6 +45,11 @@ public class LoginPage {
 
     public void clickLogin() {
         wait.until(ExpectedConditions.elementToBeClickable(loginBtn)).click();
+    }
+
+    public WebElement getLoginForm() {
+        wait.until(ExpectedConditions.visibilityOf(loginForm));
+        return loginForm;
     }
 
     /**
