@@ -3,6 +3,10 @@
 
 This repository contains automated tests for the OneKonnect application. The Tests are built using Java, Selenium, TestNG, and Maven. It follows the Page Object Model (POM) design pattern for maintainability and scalability.
 
+## Manual Test Cases
+
+https://docs.google.com/document/d/1qvt_aOJPUdW5zKosJVBA0mZYvdPaBpbDu9c2hk0AOOI/edit?usp=sharing
+
 ## Prerequisites
 
 Before you can run the tests, please ensure you have the following software installed on your system:
